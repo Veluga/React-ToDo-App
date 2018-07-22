@@ -6,7 +6,7 @@ class TodoListItem extends Component {
 
     this.state = {
       description: props.description,
-      deadline: Date.now(),
+      deadline: props.deadline,
       status: false
     };
   }
