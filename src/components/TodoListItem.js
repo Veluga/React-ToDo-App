@@ -4,8 +4,9 @@ function TodoListItem(props) {
   return (
     <tr>
       <td>{props.description}</td>
-      <td>{props.date}</td>
-      <td>{props.status}</td>
+      <td>
+        <input type="checkbox" />
+      </td>
     </tr>
   );
 }
