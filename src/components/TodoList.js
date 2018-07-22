@@ -17,7 +17,18 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <table>
+        <div id="inputs">
+          <input
+            value={this.state.text}
+            onChange={this.handleChange}
+            id="description"
+          />
+          <button onClick={this.handleSubmit} id="submit_button">
+            Add
+          </button>
+        </div>
+        <br />
+        <table id="todo_table">
           <thead>
             <tr>
               <th>Description</th>
@@ -30,20 +41,22 @@ class TodoList extends Component {
             })}
           </tbody>
         </table>
-        <input value={this.state.text} onChange={this.handleChange} />
-        <button onClick={this.handleSubmit}>Add</button>
       </div>
     );
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let prevState = this.state.items.slice();
+    if (this.state.text == "") {
+      return;
+    }
 
-    prevState.push({
+    let newState = this.state.items.slice();
+
+    newState.push({
       description: this.state.text
     });
-    this.setState({ items: prevState });
+    this.setState({ items: newState });
   }
 
   handleChange(e) {

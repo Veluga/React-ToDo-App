@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#description {
+  margin: 15px 15px 15px 15px;
+  width: 60%;
+  height: 2em;
+  float: left;
+}
+
+#submit_button {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+#inputs {
+  background-color: #4469ad;
+}
+
+#todo_table {
+  margin: auto;
+}
