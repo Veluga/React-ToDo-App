@@ -23,24 +23,21 @@ class TodoList extends Component {
             onChange={this.handleChange}
             id="description"
           />
-          <button onClick={this.handleSubmit} id="submit_button">
-            Add
-          </button>
+          <button onClick={this.handleSubmit}>Add</button>
         </div>
         <br />
-        <table id="todo_table">
-          <thead>
-            {/* <tr>
-              <th>Description</th>
-              <th>Done</th>
-            </tr> */}
-          </thead>
-          <tbody>
-            {this.state.items.map(item => {
-              return <TodoListItem description={item.description} />;
-            })}
-          </tbody>
-        </table>
+        <ul id="todo_list">
+          {this.state.items.map(item => {
+            return <TodoListItem description={item.description} />;
+          })}
+        </ul>
+        <br />
+        <br />
+        {() => {
+          if (this.state.items.length > 0) {
+            return <button onClick={this.handleSubmit}>Reset list</button>;
+          }
+        }}
       </div>
     );
   }
@@ -56,7 +53,7 @@ class TodoList extends Component {
     newState.push({
       description: this.state.text
     });
-    this.setState({ items: newState });
+    this.setState({ items: newState, text: "" });
   }
 
   handleChange(e) {

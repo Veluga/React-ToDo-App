@@ -9,13 +9,15 @@ body {
   width: 90%;
   font-size: 2em;
   text-align: center;
-  float: left;
 }
 
-#submit_button {
+button {
   margin-top: 10px;
   margin-bottom: 30px;
   font-size: 2em;
+  border: solid black;
+  background-color: #696969;
+  border-radius: 10%;
 }
 
 #inputs {
@@ -23,6 +25,8 @@ body {
   text-align: center;
 }
 
-#todo_table {
+#todo_list {
+  text-align: center;
   margin: auto;
+  font-size: 2em;
 }

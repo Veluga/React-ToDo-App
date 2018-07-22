@@ -1,14 +1,7 @@
 import React from "react";
 
 function TodoListItem(props) {
-  return (
-    <tr>
-      <td>{props.description}</td>
-      <td>
-        <input type="checkbox" />
-      </td>
-    </tr>
-  );
+  return <li>{props.description}</li>;
 }
 
 export default TodoListItem;
