@@ -12,7 +12,6 @@ class TodoList extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDone = this.handleDone.bind(this);
   }
 
   render() {
@@ -31,7 +30,7 @@ class TodoList extends Component {
             })}
           </tbody>
         </table>
-        <input onChange={this.handleChange} value={this.state.text} />
+        <input value={this.state.text} onChange={this.handleChange} />
         <button onClick={this.handleSubmit}>Add</button>
       </div>
     );
@@ -48,10 +47,9 @@ class TodoList extends Component {
   }
 
   handleChange(e) {
+    e.preventDefault();
     this.setState({ text: e.target.value });
   }
-
-  handleDone(e) {}
 }
 
 export default TodoList;
