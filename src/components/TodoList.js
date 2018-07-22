@@ -30,10 +30,10 @@ class TodoList extends Component {
         <br />
         <table id="todo_table">
           <thead>
-            <tr>
+            {/* <tr>
               <th>Description</th>
               <th>Done</th>
-            </tr>
+            </tr> */}
           </thead>
           <tbody>
             {this.state.items.map(item => {

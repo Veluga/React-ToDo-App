@@ -6,8 +6,9 @@ body {
 
 #description {
   margin: 15px 15px 15px 15px;
-  width: 60%;
-  height: 2em;
+  width: 90%;
+  font-size: 2em;
+  text-align: center;
   float: left;
 }
 
@@ -19,6 +20,7 @@ body {
 
 #inputs {
   background-color: #4469ad;
+  text-align: center;
 }
 
 #todo_table {
