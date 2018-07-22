@@ -5,6 +5,7 @@ body {
 }
 
 #description {
+  border-radius: 0%;
   margin: 15px 15px 15px 15px;
   width: 90%;
   font-size: 2em;
@@ -29,4 +30,14 @@ button {
   text-align: center;
   margin: auto;
   font-size: 2em;
+}
+
+li {
+  margin-top: 30px;
+}
+
+.done_button {
+  margin: 0px 20px 0px 0px;
+  font-size: 1em;
+  float: right;
 }

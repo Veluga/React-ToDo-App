@@ -35,6 +35,7 @@ class TodoList extends Component {
         <br />
         {() => {
           if (this.state.items.length > 0) {
+            console.log("yes");
             return <button onClick={this.handleSubmit}>Reset list</button>;
           }
         }}
