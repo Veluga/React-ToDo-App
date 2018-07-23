@@ -33,6 +33,7 @@ class TodoList extends Component {
               <TodoListItem
                 description={item.description}
                 idx={Math.random()}
+                callback={this.handleDone}
               />
             );
           })}
@@ -43,7 +44,7 @@ class TodoList extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.text == "") {
+    if (this.state.text === "") {
       return;
     }
 
@@ -60,7 +61,9 @@ class TodoList extends Component {
     this.setState({ text: e.target.value });
   }
 
-  handleDone(idx) {}
+  handleDone() {
+    console.log("bam");
+  }
 }
 
 export default TodoList;
