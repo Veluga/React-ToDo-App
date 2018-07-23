@@ -2,6 +2,7 @@ import React from "react";
 
 function TodoListItem(props) {
   let button = null;
+  //Coniditional button rendering (in todo or done list? Hide in latter)
   if (props.displayButton) {
     button = (
       <button

@@ -7,16 +7,21 @@ class TodoList extends Component {
     super(props);
 
     this.state = {
+      //Stores todo list items
       items: [],
+      //Stores done items
       done: [],
+      //Current text in input field
       text: ""
     };
+    //Scope binding
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDone = this.handleDone.bind(this);
   }
 
   render() {
+    //Conditional headers
     let todoHeader = null;
     let doneHeader = null;
     let hrSeperator = null;
@@ -31,6 +36,7 @@ class TodoList extends Component {
     }
     return (
       <div>
+        {/* Input field and add button */}
         <div id="inputs">
           <input
             value={this.state.text}
@@ -40,10 +46,12 @@ class TodoList extends Component {
           <button onClick={this.handleSubmit}>Add</button>
         </div>
         <br />
+        {/* ul for todo section*/}
         <ul id="todo_list">
           {todoHeader}
           {this.state.items.map(item => {
             return (
+              //Render TodoListItems
               <TodoListItem
                 description={item.description}
                 id={item.id}
@@ -57,6 +65,7 @@ class TodoList extends Component {
         {hrSeperator}
         <br />
         <ul id="done_list">
+          {/* Done list */}
           {doneHeader}
           {this.state.done.map(item => {
             return (
@@ -72,6 +81,7 @@ class TodoList extends Component {
     );
   }
 
+  //Handler for adding new item
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.text === "") {
@@ -88,11 +98,13 @@ class TodoList extends Component {
     this.setState({ items: newState, text: "" });
   }
 
+  //Handle change to input field
   handleChange(e) {
     e.preventDefault();
     this.setState({ text: e.target.value });
   }
 
+  //Handle 'done' button press on todo list item
   handleDone(id) {
     let newItemsState = [];
     let newDoneState = this.state.done;

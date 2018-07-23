@@ -34,8 +34,7 @@ ul {
 }
 
 li {
-  margin-top: 30px;
-  border: thin;
+  margin-top: 60px;
 }
 
 .done_button {
@@ -44,4 +43,10 @@ li {
   margin-top: 0px;
   font-size: 0.8em;
   float: right;
+}
+
+@media only screen and (max-width: 374px) {
+  body {
+    width: 120%;
+  }
 }
