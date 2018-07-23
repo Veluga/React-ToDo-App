@@ -8,6 +8,7 @@ class TodoList extends Component {
 
     this.state = {
       items: [],
+      done: [],
       text: ""
     };
     this.handleChange = this.handleChange.bind(this);
@@ -34,6 +35,21 @@ class TodoList extends Component {
                 description={item.description}
                 id={item.id}
                 callback={this.handleDone}
+                displayButton={item.displayButton}
+              />
+            );
+          })}
+        </ul>
+        <br />
+        <hr />
+        <br />
+        <ul id="done_list">
+          {this.state.done.map(item => {
+            return (
+              <TodoListItem
+                description={item.description}
+                id={item.id}
+                displayButton={item.displayButton}
               />
             );
           })}
@@ -52,7 +68,8 @@ class TodoList extends Component {
 
     newState.push({
       description: this.state.text,
-      id: Math.random()
+      id: Math.random(),
+      displayButton: true
     });
     this.setState({ items: newState, text: "" });
   }
@@ -63,13 +80,18 @@ class TodoList extends Component {
   }
 
   handleDone(id) {
-    let newState = [];
+    let newItemsState = [];
+    let newDoneState = this.state.done;
     for (let i = 0; i < this.state.items.length; i++) {
+      let item = this.state.items[i];
       if (this.state.items[i].id !== id) {
-        newState.push(this.state.items[i]);
+        newItemsState.push(item);
+      } else {
+        item.displayButton = false;
+        newDoneState.push(item);
       }
     }
-    this.setState({ items: newState });
+    this.setState({ items: newItemsState, done: newDoneState });
   }
 }
 

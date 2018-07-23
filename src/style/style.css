@@ -27,13 +27,10 @@ button {
   text-align: center;
 }
 
-#todo_list {
-  text-align: center;
-  font-size: 2em;
-}
-
 ul {
   list-style-type: none;
+  text-align: center;
+  font-size: 2em;
 }
 
 li {

@@ -1,9 +1,9 @@
 import React from "react";
 
 function TodoListItem(props) {
-  return (
-    <li>
-      {props.description}
+  let button = null;
+  if (props.displayButton) {
+    button = (
       <button
         className="done_button"
         onClick={() => {
@@ -12,6 +12,13 @@ function TodoListItem(props) {
       >
         Done
       </button>
+    );
+  }
+
+  return (
+    <li>
+      {props.description}
+      {button}
     </li>
   );
 }
