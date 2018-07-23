@@ -19,6 +19,7 @@ button {
   border: solid black;
   background-color: #696969;
   border-radius: 10%;
+  font-weight: 150;
 }
 
 #inputs {
@@ -28,16 +29,22 @@ button {
 
 #todo_list {
   text-align: center;
-  margin: auto;
   font-size: 2em;
+}
+
+ul {
+  list-style-type: none;
 }
 
 li {
   margin-top: 30px;
+  border: thin;
 }
 
 .done_button {
-  margin: 0px 20px 0px 0px;
-  font-size: 1em;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 0.8em;
   float: right;
 }

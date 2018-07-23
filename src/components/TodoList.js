@@ -12,6 +12,7 @@ class TodoList extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDone = this.handleDone.bind(this);
   }
 
   render() {
@@ -28,17 +29,14 @@ class TodoList extends Component {
         <br />
         <ul id="todo_list">
           {this.state.items.map(item => {
-            return <TodoListItem description={item.description} />;
+            return (
+              <TodoListItem
+                description={item.description}
+                idx={Math.random()}
+              />
+            );
           })}
         </ul>
-        <br />
-        <br />
-        {() => {
-          if (this.state.items.length > 0) {
-            console.log("yes");
-            return <button onClick={this.handleSubmit}>Reset list</button>;
-          }
-        }}
       </div>
     );
   }
@@ -61,6 +59,8 @@ class TodoList extends Component {
     e.preventDefault();
     this.setState({ text: e.target.value });
   }
+
+  handleDone(idx) {}
 }
 
 export default TodoList;
