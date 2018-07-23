@@ -17,6 +17,18 @@ class TodoList extends Component {
   }
 
   render() {
+    let todoHeader = null;
+    let doneHeader = null;
+    let hrSeperator = null;
+
+    if (this.state.items.length > 0) {
+      todoHeader = <h5>Todo</h5>;
+    }
+
+    if (this.state.done.length > 0) {
+      doneHeader = <h5>Done</h5>;
+      hrSeperator = <hr />;
+    }
     return (
       <div>
         <div id="inputs">
@@ -29,6 +41,7 @@ class TodoList extends Component {
         </div>
         <br />
         <ul id="todo_list">
+          {todoHeader}
           {this.state.items.map(item => {
             return (
               <TodoListItem
@@ -41,9 +54,10 @@ class TodoList extends Component {
           })}
         </ul>
         <br />
-        <hr />
+        {hrSeperator}
         <br />
         <ul id="done_list">
+          {doneHeader}
           {this.state.done.map(item => {
             return (
               <TodoListItem
