@@ -29,10 +29,14 @@ class TodoList extends Component {
         <br />
         <ul id="todo_list">
           {this.state.items.map(item => {
+            console.log(item.done);
+            if (item.done) {
+              return;
+            }
             return (
               <TodoListItem
                 description={item.description}
-                idx={Math.random()}
+                id={item.id}
                 callback={this.handleDone}
               />
             );
@@ -51,7 +55,9 @@ class TodoList extends Component {
     let newState = this.state.items.slice();
 
     newState.push({
-      description: this.state.text
+      description: this.state.text,
+      id: Math.random(),
+      done: false
     });
     this.setState({ items: newState, text: "" });
   }
@@ -61,8 +67,11 @@ class TodoList extends Component {
     this.setState({ text: e.target.value });
   }
 
-  handleDone() {
-    console.log("bam");
+  handleDone(id) {
+    for (let i = 0; i < this.state.items.length; i++) {
+      if (this.state.items[i].id === id) {
+      }
+    }
   }
 }
 
